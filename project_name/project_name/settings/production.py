@@ -54,7 +54,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': normpath(join(DJANGO_ROOT, 'default.db')),
+        'NAME': '',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
