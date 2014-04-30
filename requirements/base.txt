@@ -5,7 +5,6 @@ South==0.8.2
 pinax-theme-bootstrap==5.1.0
 django-user-accounts==1.0c1
 django-jsonfield==0.9.12
-psycopg2
 django-redis==3.6.1
 psycopg2==2.5.2
 django-contrib-comments==1.5
