@@ -1,0 +1,56 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block body_base %}
+     <section id="content_body">
+        <div class="container">
+            <div class="jumbotron">
+    <h1>{% trans "Welcome to Django on Wings (DJOWS)" %}</h1>
+    <p>
+        {% blocktrans %}
+        <b>DJOW</b> is a starting template for <a href="http://djangoproject.com/">Django</a>
+        projects intended to provide a quick starting point for websites. It is heavily inspired by <a href="">Pinax</a>
+        project and <a href="">Two Scoops Of Django</a> project template. Actually it is a mixture of both projects with
+        an addition of other apps and settings.
+        {% endblocktrans %}
+    </p>
+    
+    <h2>What's inside?</h2>
+    <p>
+        {% blocktrans %}
+        DJOW is built from <a href="">Pinax account</a> template merged with <a href="">Two Scoops Of Django</a> project template.
+        It is compatible with <a href="">Pinax</a> and should work ok with template made for it.
+        DJOW includes:
+        <ul>
+            <li>HTML5 base template powered by bootstrap</li>
+            <li>CSS as LESS</li>
+            <li>JS/LESS/ASSETS management by Django Pipeline</li>
+            <li>Preconfigured Accounts powered by Django Accounts</li>
+            <li>Custom User app to have custom user model out of the box installed, tuned and ready for futher customizations</li>
+            <li>Custom Comments app to have custom comments model out of the box installed, tuned and ready for futher customizations</li>
+            <li>Site cache backed by Redis Cache</li>
+            <li>Clear cache functionality (you can flush cache from the command line)</li>
+            <li>Database and site media backups to FTP / S3 powered by Django DBBackups</li>
+            <li>Thumbnails manipulation functionality powered by Sorl-Thumbnail</li>
+            <li>Database migrations with South</li>
+            <li>Debugging functionality with Drupal Debug Toolbar</li>
+            <li>And of course, indescpensable Django extensions and Django braces are included too!</li>
+        </ul>
+        {% endblocktrans %}
+    </p>
+    
+    {% if user.is_authenticated %}
+        {% url "what_next" as what_next_url %}
+        <p class="what_next">{% blocktrans %}Wondering <a href="{{ what_next_url }}" class="btn btn-primary large">What Next</a>?{% endblocktrans %}</p>
+    {% else %}
+        {% url "account_login" as login_url %}
+        {% url "account_signup" as signup_url %}
+        <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+    {% endif %}
+    </div></div></section>
+{% endblock %}
