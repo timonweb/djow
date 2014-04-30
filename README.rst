@@ -96,7 +96,7 @@ Creating your project
 To create a new Django project called '**pony**' using
 django-twoscoops-project, run the following command::
 
-    $ django-admin.py startproject --template=https://github.com/timonweb/djow/archive/master.zip --extension=py,rst,html pony_project
+    $ django-admin.py startproject --template=https://github.com/timonweb/djow/archive/master.zip --extension=py,rst pony_project
 
 
 Installation of Dependencies
