@@ -12,3 +12,4 @@ django-clear-cache==0.3
 django-dbbackup==1.80.2
 sorl-thumbnail==11.12
 django-extensions
+django-bootstrap-form==3.1
