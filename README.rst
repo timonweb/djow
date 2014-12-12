@@ -2,7 +2,7 @@
 Django On Wings (DJOW)
 ========================
 
-A project template for Django 1.6.
+A project template for Django 1.7 (see tag django-1.6 for Django 1.6 support)
 
 A very first note
 =================
