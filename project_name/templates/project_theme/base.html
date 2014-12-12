@@ -1,4 +1,4 @@
-{% load staticfiles compressed %}
+{% load staticfiles pipeline %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -10,7 +10,7 @@
     {% endblock %}
 
     {% block style_base %}
-        {% compressed_css 'style' %}
+        {% stylesheet 'style' %}
         {% block extra_style %}{% endblock %}
     {% endblock %}
 
@@ -120,7 +120,7 @@
 </div>
 
 {% block script_base %}
-    {% compressed_js 'main' %}
+    {% javascript 'main' %}
     {% block extra_script %}{% endblock %}
 {% endblock %}
 
