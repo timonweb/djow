@@ -1,8 +1,6 @@
 """Common settings and globals."""
-import os
-
+import os, sys
 from os.path import abspath, basename, dirname, join, normpath
-from sys import path
 
 
 ########## PATH CONFIGURATION
@@ -12,12 +10,17 @@ DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 # Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
 
+# Register separate directories for our apps and vendor_apps
+sys.path.insert(0, os.path.join(SITE_ROOT, 'apps'))
+sys.path.insert(0, os.path.join(SITE_ROOT, 'vendor_apps', 'modified'))
+sys.path.insert(0, os.path.join(SITE_ROOT, 'vendor_apps', 'nonmodified'))
+
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
-path.append(DJANGO_ROOT)
+sys.path.append(DJANGO_ROOT)
 ########## END PATH CONFIGURATION
 
 
