@@ -41,7 +41,3 @@ tramp
 # Windows
 Thumbs.db
 Desktop.ini
-
-# SQLite DB
-project_name/config/djow
-project_name/assets
