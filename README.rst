@@ -27,8 +27,8 @@ It is compatible with Pinax and should work ok with templates made for it.
 DJOW includes:
 
 * HTML5 base template powered by bootstrap
-* CSS as LESS
-* JS/LESS/ASSETS management by Django Pipeline
+* CSS as SASS
+* SASS compilation managed by gulp
 * Preconfigured Accounts powered by Django Accounts
 * Custom User app to have custom user model out of the box installed, tuned and ready for futher customizations
 * Custom Comments app to have custom comments model out of the box installed, tuned and ready for futher customizations
@@ -96,7 +96,7 @@ Creating your project
 To create a new Django project called '**pony**' using
 django-twoscoops-project, run the following command::
 
-    $ django-admin.py startproject --template=https://github.com/timonweb/djow/archive/master.zip --extension=py,rst pony_project
+    $ django-admin.py startproject --template=https://github.com/timonweb/djow/archive/master.zip --extension=json,py,rst pony_project
 
 
 Installation of Dependencies
