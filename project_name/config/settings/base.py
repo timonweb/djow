@@ -198,7 +198,7 @@ DJANGO_APPS = (
 # Third party apps specific for this project go here.
 THIRD_PARTY_APPS = (
     'django_comments',
-    'redis_cache',
+    'django_redis',
     'pipeline',
     'account',
     'bootstrapform',
