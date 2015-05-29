@@ -1,4 +1,4 @@
-Django==1.7.1
+Django==1.7.8
 django-braces==1.4.0
 django-model-utils==2.2
 django-user-accounts==1.0
