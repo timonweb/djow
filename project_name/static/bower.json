@@ -1,0 +1,21 @@
+{
+  "name": "djow_static",
+  "version": "0.0.1",
+  "homepage": "https://github.com/timonweb/djow",
+  "authors": [
+    "Tim Kamanin <tim@timonweb.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "jquery": "2.1.4"
+  }
+}

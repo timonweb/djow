@@ -199,7 +199,6 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'django_comments',
     'django_redis',
-    'pipeline',
     'compressor',
     'account',
     'bootstrapform',
@@ -277,47 +276,22 @@ AUTHENTICATION_BACKENDS = [
 ]
 ########## END CUSTOM USER MODEL AND CONFIGURATION
 
-##### PIPELINE CONFIGURATION
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-
-PIPELINE_COMPILERS = (
-  'pipeline.compilers.less.LessCompiler',
-)
-
-PIPELINE_CSS = {
-    'style': {
-        'source_filenames': (
-          'less/project_styles.less',
-        ),
-        'output_filename': 'css/style.css',
-        'extra_context': {
-            'media': 'screen,projection',
-        },
-    },
-}
-
-PIPELINE_JS = {
-    'main': {
-        'source_filenames': (
-          'vendor/jquery/dist/jquery.min.js',
-          'vendor/bootstrap/dist/js/bootstrap.min.js',
-          'js/project_theme.js',
-          'js/scripts.js',
-        ),
-        'output_filename': 'js/main.js',
-    }
-}
-
-PIPELINE_LESS_BINARY = '/usr/local/bin/lessc'
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-########## END PIPELINE CONFIGURATION
-
 ########## SOLR THUMBNAIL CONFIGURATION
-#THUMBNAIL_BACKEND = 'core.storage.SEOThumbnailBackend'
 THUMBNAIL_PREFIX = 'images/'
 THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
 THUMBNAIL_DEBUG = False
 THUMBNAIL_FORMAT = 'PNG'
 THUMBNAIL_REDIS_DB = 1
 ########## END SOLR THUMBNAIL CONFIGURATION
+
+########## COMPRESSOR CONFIGURATION
+COMPRESS_ENABLED = DEBUG
+COMPRESS_OFFLINE = True
+
+COMPRESS_STORAGE = 'compressor.storage.CompressorFileStorage'
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+    'compressor.filters.yuglify.YUglifyCSSFilter'
+]
+########## END COMPRESSOR CONFIGURATION
