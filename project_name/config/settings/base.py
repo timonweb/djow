@@ -200,6 +200,7 @@ THIRD_PARTY_APPS = (
     'django_comments',
     'django_redis',
     'pipeline',
+    'compressor',
     'account',
     'bootstrapform',
     'clear_cache',

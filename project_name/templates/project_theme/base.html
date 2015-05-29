@@ -1,4 +1,4 @@
-{% load staticfiles pipeline %}
+{% load staticfiles pipeline compress %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -10,8 +10,10 @@
     {% endblock %}
 
     {% block style_base %}
-        {% stylesheet 'style' %}
-        {% block extra_style %}{% endblock %}
+         {% compress css %}
+             <link href="{% static 'css/main.css' %}" rel="stylesheet">
+         {% endcompress %}
+         {% block extra_style %}{% endblock %}
     {% endblock %}
 
     {% block html5shim %}
@@ -89,7 +91,12 @@
 </div>
 
 {% block script_base %}
-    {% javascript 'main' %}
+    {% compress js %}
+        <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/project_theme.js' %}"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+    {% endcompress %}
     {% block extra_script %}{% endblock %}
 {% endblock %}
 
