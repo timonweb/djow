@@ -34,6 +34,15 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+# Temporary development only SQLlite DB
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(DJANGO_ROOT,'djow'),
+    }
+}
+print DJANGO_ROOT
 ########## END DATABASE CONFIGURATION
 
 
