@@ -1,5 +1,5 @@
 {
-  "name": "project_name",
+  "name": "{{ project_name }}",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.5.6",
